@@ -10,10 +10,7 @@ public class StatsService {
     }
 
     public int findMiddleSum(int[] dataOnMonth) {
-        int sum = 0;
-        for (int data : dataOnMonth) {
-            sum = sum + data;
-        }
+        int sum = findSum(dataOnMonth);
         int middleSum = sum / dataOnMonth.length;
         return middleSum;
     }
@@ -28,7 +25,7 @@ public class StatsService {
                 monthMaxSales = i;
             }
         }
-        return monthMaxSales+1;
+        return monthMaxSales + 1;
     }
 
     public int findMonthMinimalSales(int[] dataOnMonth) {
@@ -41,15 +38,11 @@ public class StatsService {
                 monthMinimalSales = i;
             }
         }
-        return monthMinimalSales+1;
+        return monthMinimalSales + 1;
     }
 
     public int findAmountMonthBelowMiddle(int[] dataOnMonth) {
-        int sum = 0;
-        for (int data : dataOnMonth) {
-            sum = sum + data;
-        }
-        int sumMiddle = sum / dataOnMonth.length;
+        int sumMiddle = findMiddleSum(dataOnMonth);
         int amountMonthBelow = 0;
         for (int data : dataOnMonth) {
             if (data < sumMiddle) {
@@ -60,11 +53,7 @@ public class StatsService {
     }
 
     public int findAmountMonthHigherMiddle(int[] dataOnMonth) {
-        int sum = 0;
-        for (int data : dataOnMonth) {
-            sum = sum + data;
-        }
-        int sumMiddle = sum / dataOnMonth.length;
+        int sumMiddle = findMiddleSum(dataOnMonth);
         int amountMonthHigher = 0;
         for (int data : dataOnMonth) {
             if (data > sumMiddle) {
